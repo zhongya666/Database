@@ -8,9 +8,9 @@
 -- 显式内连接 select 列名 from 表名1 [inner] join 表名2 on 条件
 
 -- 查询用户信息和对应的订单信息
-SELECT * FROM USER INNER JOIN orderlist ON orderlist.`uid` = user.`id`;
+SELECT * FROM `user` INNER JOIN orderlist ON orderlist.`uid` = user.`id`;
 -- 查询用户信息和对应的订单信息，起别名
-SELECT * FROM USER u INNER JOIN orderlist o ON o.`uid` = u.`id`;
+SELECT * FROM `user` u INNER JOIN orderlist o ON o.`uid` = u.`id`;
 -- 查询用户姓名，年龄,订单编号
 SELECT
 	u.`name`,	-- 用户姓名
@@ -49,7 +49,7 @@ SELECT
 	u.*,
 	o.`number`
 FROM
-	USER u
+	`user` u
 LEFT OUTER JOIN
 	orderlist o
 ON
@@ -64,7 +64,7 @@ SELECT
 	o.*,
 	u.`name`
 FROM
-	USER u
+	`user` u
 RIGHT OUTER JOIN
 	orderlist o
 ON
